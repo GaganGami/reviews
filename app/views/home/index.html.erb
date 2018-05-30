@@ -1,0 +1,36 @@
+<h3>Now Playing Movies in Theater</h3>
+<% if @movies.present? %>
+	<div class="row">
+		<ul class="nav nav-pills nav-fill">
+			<li class="nav-item" style="padding-top:10px;padding-right: 3px;">Sort By: </li>
+		  <li class="nav-item">
+		    <%= link_to "Title", root_path(sort: 'title'), class: "nav-link #{(params[:sort].present? && params[:sort] == 'title') ? 'active' : ''}"%>
+		  </li>
+		  <li class="nav-item">
+		  	<%= link_to "Release Date", root_path(sort: 'date'), class: "nav-link"%>
+		  </li>
+		  <li class="nav-item">
+		    <%= link_to "Genre", root_path(sort: 'genre'), class: "nav-link"%>
+		  </li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<% @movies.each do |movie| %>
+				<div class="row mb-4 border rounded">
+					<div class="col-md-4">
+						<%= image_tag "https://image.tmdb.org/t/p/w500_and_h282_face#{movie['table']['poster_path']}", style: "max-width:100%;" %>
+						<div class="text-center"><b><%= "#{movie['table']['vote_average']} out of 10" %></b></div>
+					</div>
+					<div class="col-md-8">
+						<h5><%= movie["table"]["title"] %></h5>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-md-4">
+			<h2>Hello World</h2>
+		</div>
+<% else %>
+	<h3>No Movies available at the moment..!!!</h3>
+<% end %>
