@@ -10,12 +10,12 @@
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.email_field :first_name, required: true %>
+    <%= f.text_field :first_name, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.email_field :last_name, required: true %>
+    <%= f.text_field :last_name, required: true %>
   </div>
   
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
