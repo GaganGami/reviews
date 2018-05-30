@@ -28,3 +28,7 @@ example api = https://api.themoviedb.org/3/movie/550?api_key=321f0d55186803c7ea6
 api_key = 321f0d55186803c7ea63efc6b882b220
 
 image_path = https://image.tmdb.org/t/p/w500_and_h282_face/
+
+https://api.themoviedb.org/discover/movie?sort_by=popularity.desc?api_key=321f0d55186803c7ea63efc6b882b220
+
+Tmdb::Api.key("321f0d55186803c7ea63efc6b882b220")
